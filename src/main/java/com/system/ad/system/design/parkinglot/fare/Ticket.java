@@ -29,9 +29,7 @@ public class Ticket {
 	 * @param entryTime
 	 * @param exitTime
 	 */
-	public Ticket(String ticketId, Vehicle vehicle, ParkingSpot parkingSpot, LocalDateTime entryTime,
-			LocalDateTime exitTime) {
-		super();
+	public Ticket(String ticketId, Vehicle vehicle, ParkingSpot parkingSpot, LocalDateTime entryTime) {
 		this.ticketId = ticketId;
 		this.vehicle = vehicle;
 		this.parkingSpot = parkingSpot;

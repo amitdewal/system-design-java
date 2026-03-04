@@ -3,7 +3,6 @@
  */
 package com.system.ad.system.design.parkinglot.spot;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -15,28 +14,32 @@ import com.system.ad.system.design.parkinglot.vehicle.VehicleSize;
  */
 public class ParkingManager {
 
-	private Map<VehicleSize, List<ParkingSpot>> availableSpots;
+	private final Map<VehicleSize, List<ParkingSpot>> availableSpots;
 
-	private Map<Vehicle, ParkingSpot> vehicleToSpotMap;
+	private final Map<Vehicle, ParkingSpot> vehicleToSpotMap;
+
+	private final Map<ParkingSpot, Vehicle> spotVehicleMap;
+
+//	create parking manager based on a given map of available spots;
 
 	/**
 	 * @param availableSpots
 	 * @param vehicleToSpotMap
-	 * 
+	 * @param spotVehicleMap
 	 */
-//	create parking manager based on a given map of available spots;
 	public ParkingManager(Map<VehicleSize, List<ParkingSpot>> availableSpots,
-			Map<Vehicle, ParkingSpot> vehicleToSpotMap) {
+			Map<Vehicle, ParkingSpot> vehicleToSpotMap, Map<ParkingSpot, Vehicle> spotVehicleMap) {
 		super();
 		this.availableSpots = availableSpots;
-		this.vehicleToSpotMap = new HashMap<>();
+		this.vehicleToSpotMap = vehicleToSpotMap;
+		this.spotVehicleMap = spotVehicleMap;
 	}
 
 	public ParkingSpot findSpotForVehicle(Vehicle vehicle) {
 		VehicleSize vehicleSize = vehicle.getSize();
 
 		// start looking for thr smallest spot that can fit the vehicle
-           
+
 		for (VehicleSize size : VehicleSize.values()) {
 
 			if (size.ordinal() >= vehicleSize.ordinal()) {
@@ -65,6 +68,9 @@ public class ParkingManager {
 
 			vehicleToSpotMap.put(vehicle, spot);
 
+			// s
+			spotVehicleMap.put(spot, vehicle);
+
 			// remove the spot from the avialble list;
 			availableSpots.get(spot.getSize()).remove(spot);
 			return spot; // parking successful
@@ -74,13 +80,27 @@ public class ParkingManager {
 
 	}
 
-	void unparkVehicle(Vehicle vehicle) {
+	public void unparkVehicle(Vehicle vehicle) {
 
 		ParkingSpot spot = vehicleToSpotMap.remove(vehicle);
 		if (spot != null) {
 			spot.vacate();
 			availableSpots.get(spot.getSize()).add(spot);
 		}
+
+	}
+
+// find vehicle's parking spot
+	public ParkingSpot findVehicleBySpot(Vehicle vehicle) {
+
+		return vehicleToSpotMap.get(vehicle);
+
+	}
+
+	// find which vehicle is parked in a spot
+	public Vehicle findSpotByVehicle(ParkingSpot spot) {
+
+		return spotVehicleMap.get(spot);
 
 	}
 }

@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package com.system.ad.system.design.parkinglot.fare;
+
+import java.math.BigDecimal;
+
+/**
+ * 
+ */
+public interface FareStrategy {
+
+	BigDecimal calculateFare(Ticket ticket, BigDecimal inputFare);
+}
