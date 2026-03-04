@@ -16,7 +16,7 @@ public class Play {
 	public static void main(String[] args) {
 
 		Play demo = new Play();
-		demo.method(null);
+//		demo.method(null); compilation error
 
 	}
 

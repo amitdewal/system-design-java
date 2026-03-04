@@ -122,3 +122,222 @@ Focus: Backend Development | System Design | Clean Architecture
 
 ---
 # system-design-java
+
+# Eclipse IDE Productivity Shortcuts
+
+This document lists useful Eclipse shortcuts that help developers
+navigate and understand large Java projects efficiently.
+
+------------------------------------------------------------------------
+
+## 1. Open Type (Class / Interface)
+
+**Shortcut**
+
+Ctrl + Shift + T
+
+**Purpose**
+
+Opens any **Java type** in the workspace.
+
+**Use Cases**
+
+-   Open a class quickly\
+-   Navigate to interfaces or enums\
+-   Jump between different Java classes
+
+**Example**
+
+Search for:
+
+UserService
+
+Eclipse will show matching Java classes and allow you to open the
+selected one.
+
+------------------------------------------------------------------------
+
+## 2. Open Resource (Any File)
+
+**Shortcut**
+
+Ctrl + Shift + R
+
+**Purpose**
+
+Opens **any file** in the project.
+
+**Supported Files**
+
+-   .java
+-   .xml
+-   .yml
+-   .properties
+-   .html
+-   .js
+-   .md
+-   Any other project file
+
+**Example**
+
+Search for:
+
+application.yml
+
+Useful for quickly opening configuration files.
+
+------------------------------------------------------------------------
+
+## 3. Go To Declaration / Definition
+
+**Shortcut**
+
+F3
+
+**Purpose**
+
+Navigates directly to the **definition of a class, method, or
+variable**.
+
+**Example**
+
+userService.getUserById(id);
+
+Press **F3** on `getUserById()` to jump to its implementation.
+
+------------------------------------------------------------------------
+
+## 4. Find All References
+
+**Shortcut**
+
+Ctrl + Shift + G
+
+**Purpose**
+
+Finds **all places where a class, method, or variable is used**.
+
+**Example**
+
+Select:
+
+getUserById()
+
+Eclipse will show every file where this method is referenced.
+
+------------------------------------------------------------------------
+
+## 5. Call Hierarchy
+
+**Shortcut**
+
+Ctrl + Alt + H
+
+**Purpose**
+
+Displays the **method call chain** and helps understand execution flow.
+
+**Example Flow**
+
+Controller\
+↓\
+Service\
+↓\
+Repository
+
+------------------------------------------------------------------------
+
+## 6. Type Hierarchy
+
+**Shortcut**
+
+F4
+
+**Purpose**
+
+Shows **inheritance relationships** between classes and interfaces.
+
+**Example**
+
+Animal\
+├── Dog\
+├── Cat\
+└── Bird
+
+Useful when exploring **object-oriented design structures**.
+
+------------------------------------------------------------------------
+
+## 7. Class Outline
+
+**Shortcut**
+
+Ctrl + O
+
+**Purpose**
+
+Displays all **methods and fields inside the current class**.
+
+Example methods:
+
+createUser()\
+updateUser()\
+deleteUser()\
+findUser()
+
+Allows quick navigation within a class.
+
+------------------------------------------------------------------------
+
+## 8. Switch Between Open Files
+
+**Shortcut**
+
+Ctrl + E
+
+**Purpose**
+
+Switch quickly between **recently opened files**.
+
+------------------------------------------------------------------------
+
+## 9. Global Search
+
+**Shortcut**
+
+Ctrl + H
+
+**Purpose**
+
+Search across the entire project for:
+
+-   Text
+-   Classes
+-   Methods
+-   Annotations
+
+------------------------------------------------------------------------
+
+## 10. Safe Refactor Rename
+
+**Shortcut**
+
+Alt + Shift + R
+
+**Purpose**
+
+Rename a **variable, method, or class** safely across the project.\
+All references are automatically updated.
+
+------------------------------------------------------------------------
+
+## Most Frequently Used Shortcuts
+
+Ctrl + Shift + T → Open class\
+F3 → Go to definition\
+Ctrl + Shift + G → Find usages\
+Ctrl + Alt + H → Call hierarchy
+
+These shortcuts significantly improve productivity when navigating large
+Java codebases.
+
