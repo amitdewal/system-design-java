@@ -1,0 +1,22 @@
+Race conditions occur when multiple threads or requests try to modify the same data at the same time, causing inconsistent results. Locking strategies control how concurrent updates happen.
+Two common approaches:
+
+Pessimistic Locking → Assume conflict will happen, so lock the resource.
+
+Optimistic Locking → Assume conflict rarely happens, detect conflict late
+
+Pessimistic Locking: Assume conflict will happen, so lock the resource.
+                     Locks the resource before update to prevent concurrent modification.
+					 
+					 Thread A ---- LOCK ----> Update ---- Unlock
+                     Thread B ---- WAIT ----> Update
+
+Optimistic Locking: Assume conflict rarely happens, detect conflict later.
+                    Allows concurrent access but detects conflicts using a version check during update.
+					
+					Thread A read version 1
+                    Thread B read version 1
+                    Thread A update -> version 2
+                    Thread B update -> version mismatch -> FAIL
+                    
+                    
