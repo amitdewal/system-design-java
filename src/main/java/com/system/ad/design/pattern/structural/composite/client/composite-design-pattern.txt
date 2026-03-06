@@ -1,0 +1,31 @@
+## Structure of Composite Pattern
+Composite Design Pattern is a structural design pattern.
+let us organzie objects into tree structures and then handle these structures as if they were individual objects.
+
+It allows you to treat individual objects and group of objects in the same way.
+
+
+Composite pattern ka simple idea:
+Leaf → single object
+
+Composite → group of objects
+
+But dono ko same interface se treat karte hain.
+
+        Employee (interface)
+            |
+     --------------------
+     |                  |
+ Developer          Manager
+  (Leaf)           (Composite)
+                      |
+                 List<Employee>
+
+          Main components:
+------------------------------------------
+Component	            Role
+---------               -----------------
+Component	            Common interface (Employee)
+Leaf					Individual object (Developer)
+Composite				Object that contains children (Manager)
+Client					Uses the structure
