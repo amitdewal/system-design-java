@@ -1,0 +1,22 @@
+Relationship Flow
+
+MovieBookingSystem
+      │
+      ▼
+ScreeningManager
+      │
+      ▼
+   Screening
+      │
+      ▼
+     Room
+      │
+      ▼
+    Layout
+      │
+      ▼
+     Seat
+      │
+      ▼
+PricingStrategy
+
