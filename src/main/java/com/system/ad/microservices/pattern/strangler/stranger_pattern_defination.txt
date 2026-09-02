@@ -1,0 +1,21 @@
+The Strangler Pattern (Strangler Fig Pattern)
+==============================================
+The name comes from nature: a strangler fig tree grows around an existing tree, slowly wrapping around it. Over time the old tree dies and rots away, but by then the fig has its own structure and stands on its own. The new thing grows around the old thing until the old thing isn't needed anymore.
+
+
+
+
+
+What problem does it solve?
+==============================================
+Imagine you have a big old legacy system (a monolith). It works, people depend on it, but the code is messy, outdated, or hard to maintain. You want to move to a new system (say, microservices, or just cleaner architecture).
+
+The strangler pattern solves this by letting you migrate gradually, piece by piece, while the old system keeps running.
+
+How it works
+==============================================
+1. You put a "router" or "facade" in front of your old system
+2. New features (or rewritten old features) go to the new system
+3. Everything not yet migrated still goes to the old system
+4. Slowly, feature by feature, you migrate more functionality to the new system
+5. Eventually, the old system handles nothing — you delete it
