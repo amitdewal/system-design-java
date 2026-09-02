@@ -1,0 +1,6 @@
+How it works
+You put a "router" or "facade" in front of your old system
+New features (or rewritten old features) go to the new system
+Everything not yet migrated still goes to the old system
+Slowly, feature by feature, you migrate more functionality to the new system
+Eventually, the old system handles nothing — you delete it
